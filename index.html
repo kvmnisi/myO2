@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- In the head section, after your existing links, add: -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+    <script src="hero.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="flex-wrapper">
+            <div class="logo-wrap">
+                <span class="btn-2">Otshepeng-Oreratile</span>
+                <span class="btn-2">Babeile</span>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop>
+            <source src="https://res.cloudinary.com/dcfvhjvff/video/upload/v1771014917/A142BFFB-6D03-40FA-87C9-55C3FB649577_vlmnid.mov" type="video/mp4"/>
+        </video>
+        <div class="container">
+            <div class="title-block">
+                <div class="title-h1">
+                    <div class="title-row title-row-1">
+                        <div class="title-charts-cont" id="eve"><span>Wi</span></div>
+                        <div class="title-charts-cont" id="ry"><span>ll</span></div>
+                        <div class="title-charts-cont" id="fo"><span>y</span></div>
+                        <div class="title-charts-cont" id="ssil"><span>ou</span></div>
+                    </div>
+                    <div class="title-row title-row-2">
+                        <div class="title-charts-cont" id="tells"><span>be</span></div>
+                        <div class="title-charts-cont" id="a"><span>my</span></div>
+                        <div class="title-charts-cont" id="st"><span>v-</span></div>
+                        <div class="title-charts-cont" id="ory"><span>date?</span></div>
+                    </div>
+                </div>
+                <div class="first-desc">
+                    <span class="desc-1">You actually have no choice</span>
+                </div>
+            </div>
+      
+            <div class="copyright">
+                <span class="desc-1">31 DECEMBER 2025 TO INFINITY - ALL RIGHTS RESERVED ©</span>
+            </div>
+          
+            <div class="scroll-to">
+                <div class="scroll-to__row">
+                    <span class="desc-1">Scroll to</span>
+                </div>
+                <div class="scroll-to__row">
+                    <span class="desc-1">find the words</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Word Search Puzzle Section -->
+    <section class="puzzle-section">
+        <div class="container">
+            <h2 class="title-h1 puzzle-title">FIND THE WORDS</h2>
+            <p class="desc-2 puzzle-subtitle">Words about us, love, and everything in between</p>
+            
+            <div class="puzzle-wrapper">
+                <div class="puzzle-container" id="puzzle"></div>
+                <div class="word-list">
+                    <h3 class="btn-1">Words to Find:</h3>
+                    <ul id="word-list">
+                        <li class="desc-2">Your favourite colour</li>
+                        <li class="desc-2">what you say when you want to get freaky</li>
+                        <li class="desc-2">wazy</li>
+                        <li class="desc-2">your favourite artist</li>
+                        <li class="desc-2">the main character of your favourite movie</li>
+                        <li class="desc-2">where you are from</li>
+                        <li class="desc-2">your favourite type of flowers</li>
+                        <li class="desc-2">that shit team we support</li>
+                        <li class="desc-2">location of our first date</li>
+                        <li class="desc-2">what I say when you say something I agree with</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="check-btn" class="btn-1">Check Selection</button>
+                <button id="reset-btn" class="btn-1">Reset</button>
+                <button id="show-answers-btn" class="btn-1">Show Answers</button>
+            </div>
+            <div id="message" class="desc-1"></div>
+        </div>
+    </section>
+
+    <!-- Add the boxes decorative element -->
+    <div class="boxes">
+        <div class="boxes__box"></div>
+        <div class="boxes__box"></div>
+        <div class="boxes__box"></div>
+        <div class="boxes__box"></div>
+        <div class="boxes__box"></div>
+    </div>
+
+
+</body>
+</html>

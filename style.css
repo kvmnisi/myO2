@@ -1,0 +1,629 @@
+/* Proper font imports with fallback sources */
+@font-face {
+  font-family: "Reforma 1918";
+  src: local("Reforma 1918"),
+       url("fonts/Reforma1918-Regular.woff2") format("woff2"),
+       url("fonts/Reforma1918-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Reforma 1918";
+  src: local("Reforma 1918 Bold"),
+       url("fonts/Reforma1918-Bold.woff2") format("woff2"),
+       url("fonts/Reforma1918-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins Regular"),
+       url("fonts/Poppins-Regular.woff2") format("woff2"),
+       url("fonts/Poppins-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins Medium"),
+       url("fonts/Poppins-Medium.woff2") format("woff2"),
+       url("fonts/Poppins-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins SemiBold"),
+       url("fonts/Poppins-SemiBold.woff2") format("woff2"),
+       url("fonts/Poppins-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 6.9444444444vw;
+}
+
+:root {
+  --main-font: "Reforma 1918", sans-serif;
+  --sub-font: "Poppins", sans-serif;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --font-size-h1: 1.41rem;
+  --font-size-desc-1: 0.16rem;
+  --font-size-desc-2: 0.16rem;
+  --font-size-header-text-1: 0.14rem;
+  --font-size-btn-1: 0.18rem;
+  --font-size-btn-2: 0.18rem;
+  
+  --line-height-h1: 1.26rem;
+  --line-height-desc-1: 0.16rem;
+  --line-height-desc-2: 0.16rem;
+  --line-height-header-text-1: 0.14rem;
+  --line-height-btn-1: 0.18rem;
+  --line-height-btn-2: 0.18rem;
+}
+
+.title-h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  font-weight: 700;
+  color: var(--color-white);
+  font-family: var(--main-font);
+}
+
+.desc-1 {
+  font-size: var(--font-size-desc-1);
+  line-height: var(--line-height-desc-1);
+  font-weight: 500;
+  color: var(--color-white);
+  font-family: var(--sub-font);
+}
+
+.desc-2 {
+  font-size: var(--font-size-desc-2);
+  line-height: var(--line-height-desc-2);
+  font-weight: 600;
+  color: var(--color-white);
+  font-family: var(--sub-font);
+}
+
+.header-text-1 {
+  font-size: var(--font-size-header-text-1);
+  line-height: var(--line-height-header-text-1);
+  font-weight: 500;
+  color: var(--color-white);
+  font-family: var(--sub-font);
+}
+
+.btn-1 {
+  font-size: var(--font-size-btn-2);
+  line-height: var(--line-height-btn-2);
+  font-weight: 500;
+  color: var(--color-white);
+  font-family: var(--sub-font);
+}
+
+.btn-2 {
+  font-size: var(--font-size-btn-1);
+  line-height: var(--line-height-btn-1);
+  font-weight: 600;
+  color: var(--color-white);
+  font-family: var(--sub-font);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+img {
+  display: block;
+  /* Fixed: user-drag is not standard, using webkit version */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  /* Keep existing properties */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* extra long transition to hide blue autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus {
+  -webkit-transition: background-color 999999999999999s 0s, color 999999999999999s 0s;
+  transition: background-color 999999999999999s 0s, color 999999999999999s 0s;
+}
+
+/* Remove Safari autofill button */
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=tel],
+textarea {
+  /* remove autofill blue background */
+  box-shadow: inset 0 0 0 150px rgba(255, 255, 255, 0) !important;
+  -webkit-box-shadow: inset 0 0 0 150px rgba(255, 255, 255, 0) !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: transparent;
+}
+
+/* Fixed: input[type=number] appearance */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Add webkit appearance reset for number inputs */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  background: var(--color-black);
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 0.32rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0.9rem;
+  padding: 0 0.32rem;
+  z-index: 100; /* Added z-index to keep header above content */
+  
+  .flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    span {
+      display: flex;
+      
+      &:last-child {
+        position: relative;
+        left: 0.13rem;
+      }
+    }
+  }
+  
+  .header-menu {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    
+    &__item {
+      &:not(:last-child) {
+        margin-right: 0.37rem;
+      }
+      cursor: pointer;
+      
+      /* Add hover effect for better UX */
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ensure container takes full height */
+  }
+  
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Added height for better video coverage */
+    object-fit: cover; /* Ensures video covers area properly */
+    z-index: -1;
+  }
+  
+  .title-block {
+    padding-left: 1.48rem;
+    position: relative;
+    
+    .title-h1 {
+      text-transform: uppercase;
+      
+      span {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      
+      u {
+        text-decoration: none;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+      
+      .title-row {
+        display: flex;
+      }
+      
+      .title-charts-cont {
+        display: flex;
+        overflow: hidden;
+      }
+      
+      .title-row-2 {
+        padding-left: 0.83rem;
+      }
+      
+      #ry {
+        margin-right: 0.37rem;
+      }
+      
+      #tells {
+        margin-right: 0.15rem;
+      }
+      
+      #a {
+        margin-right: 0.15rem;
+      }
+    }
+    
+    .first-desc {
+      position: absolute;
+      top: -0.5rem;
+      right: 3.7rem;
+      overflow: hidden;
+      display: flex;
+    }
+    
+    .second-desc {
+      position: absolute;
+      bottom: -1rem;
+      left: 4.85rem;
+      overflow: hidden;
+      display: flex;
+    }
+  }
+  
+  .copyright {
+    position: absolute;
+    bottom: 0.32rem;
+    left: 0.32rem;
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .scroll-to {
+    position: absolute;
+    bottom: 0.32rem;
+    left: 7.75rem;
+    width: 1.48rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    
+    &__row {
+      overflow: hidden;
+      display: flex;
+    }
+  }
+  
+  .book-btn {
+    position: absolute;
+    bottom: 0.32rem;
+    right: 0.32rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Added cursor pointer for better UX */
+    
+    &__circle {
+      width: 1.7rem;
+      height: 1.7rem;
+      border: 1px solid var(--color-white);
+      border-radius: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.3s ease; /* Added smooth transition */
+    }
+    
+    /* Add hover effect for book button */
+    &:hover &__circle {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    
+    .btn-text {
+      width: 1.28rem;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      z-index: 1; /* Ensure text stays above circle */
+    }
+  }
+}
+
+/* Add media queries for responsive design */
+@media screen and (max-width: 768px) {
+  :root {
+    --font-size-h1: 1.2rem;
+    --line-height-h1: 1.1rem;
+  }
+  
+  .hero .title-block {
+    padding-left: 0.5rem;
+  }
+  
+  .header .header-menu__item:not(:last-child) {
+    margin-right: 0.2rem;
+  }
+}
+
+/* Add to your existing style.css */
+
+/* Puzzle Section Styles */
+.puzzle-section {
+    padding: 80px 0;
+    background: rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 5;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.puzzle-title {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--color-white);
+}
+
+.puzzle-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.puzzle-wrapper {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(15, 40px);
+    gap: 2px;
+    background: var(--color-black);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.puzzle-cell {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sub-font);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+    font-size: 18px;
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.puzzle-cell.selected {
+    background: #ffd966;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 217, 102, 0.5);
+    border-color: #ffd966;
+}
+
+.puzzle-cell.found {
+    background: #90ee90;
+    color: #000;
+    border-color: #90ee90;
+}
+
+.word-list {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.word-list h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    font-size: 0.2rem;
+    text-align: center;
+}
+
+.word-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.word-list li {
+    padding: 8px 12px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: all 0.3s;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.word-list li.found-word {
+    background: rgba(144, 238, 144, 0.3);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0 20px;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    padding: 12px 30px;
+    font-size: 0.16rem;
+    border: 1px solid var(--color-white);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: transparent;
+    color: var(--color-white);
+    min-width: 150px;
+}
+
+.controls button:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+    transform: translateY(-2px);
+}
+
+.controls button:nth-child(2) {
+    border-color: #666;
+    color: #666;
+}
+
+.controls button:nth-child(2):hover {
+    background: #666;
+    color: var(--color-white);
+}
+
+.controls button:nth-child(3) {
+    border-color: #90ee90;
+    color: #90ee90;
+}
+
+.controls button:nth-child(3):hover {
+    background: #90ee90;
+    color: #000;
+}
+
+#message {
+    text-align: center;
+    min-height: 30px;
+    margin-top: 20px;
+    color: var(--color-white);
+}
+
+/* Update scroll-to text */
+.scroll-to__row span {
+    color: var(--color-white);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .puzzle-container {
+        grid-template-columns: repeat(15, 30px);
+    }
+    
+    .puzzle-cell {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .puzzle-wrapper {
+        gap: 20px;
+    }
+    
+    .word-list {
+        min-width: 240px;
+    }
+    
+    .controls button {
+        min-width: 120px;
+        padding: 10px 20px;
+    }
+}
+
+/* Add to your existing boxes styles to ensure they appear below puzzle */
+.boxes {
+    position: relative;
+    height: 300px;
+    margin-top: -150px;
+    pointer-events: none;
+    z-index: 1;
+}
